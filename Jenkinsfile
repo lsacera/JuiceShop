@@ -14,7 +14,7 @@ pipeline {
               withCredentials([usernamePassword(credentialsId: 'kiuwan_saas',
                         passwordVariable: 'PASSWORD',
                         usernameVariable: 'USERNAME')]) {
-                         def returnCode = sh(returnStatus: true, script:'${AGENT_HOME}/bin/agent.sh -s \"${WORKSPACE}\" -n \"${JOB_NAME}\" -cr \"${BUILD_NUMBER}\" -l \"${BUILD_TAG}\" -bn master -wr --user \"$USERNAME\" --pass \"$PASSWORD\"')
+                         def returnCode = sh(returnStatus: true, script:'${AGENT_HOME}/bin/agent.sh -s \"${WORKSPACE}\" -n \"${JOB_NAME}\" -cr \"${BUILD_NUMBER}\" -l \"${BUILD_TAG}\" -bn luis -wr --user \"$USERNAME\" --pass \"$PASSWORD\"')
                          //echo "Building PR #${env.getEnvironment()}"
                          
                          switch(returnCode){
